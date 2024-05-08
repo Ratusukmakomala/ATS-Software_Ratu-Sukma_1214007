@@ -1,0 +1,19 @@
+Berikut penjelasan dari kode program dalam pengujian aplikasi register pada sistem: 
+
+from selenium import webdriver: Mengimpor modul webdriver dari pustaka Selenium, yang digunakan untuk mengotomatisasi browser.
+from selenium.webdriver.common.by import By: Mengimpor modul By dari pustaka Selenium, yang menyediakan metode pencarian elemen berdasarkan kriteria tertentu.
+from selenium.webdriver.support.ui import WebDriverWait: Mengimpor modul WebDriverWait dari pustaka Selenium, yang digunakan untuk menunggu kondisi tertentu sebelum melanjutkan eksekusi kode.
+from selenium.webdriver.support import expected_conditions as EC: Mengimpor modul expected_conditions dari pustaka Selenium, yang menyediakan sejumlah kondisi yang bisa diterapkan dalam WebDriverWait.
+driver = webdriver.Chrome(): Menginisialisasi objek driver dengan menggunakan Chrome WebDriver. Perlu diingat bahwa ini harus disesuaikan dengan browser yang digunakan.
+driver.get("https://www.example.com/register"): Mengarahkan driver untuk membuka halaman registrasi di URL yang ditentukan.
+assert "Registrasi" in driver.title: Memastikan bahwa kata "Registrasi" terdapat dalam judul halaman untuk memverifikasi bahwa halaman registrasi terbuka dengan benar.
+Blok berikutnya (Langkah 2 hingga Langkah 5) adalah serangkaian langkah-langkah pengujian:
+Langkah 2: Mengisi formulir registrasi dengan username, email, password, dan konfirmasi password.
+Langkah 3: Menunggu hingga elemen dengan ID "registration_success_message" muncul di halaman, menandakan bahwa registrasi berhasil.
+Langkah 4: (Tidak dilakukan dalam contoh ini) Biasanya digunakan untuk memeriksa email konfirmasi atau langkah tambahan setelah registrasi.
+Langkah 5: Membersihkan objek driver dan menutup sesi browser setelah pengujian selesai.
+driver.quit(): Mengakhiri sesi WebDriver dan menutup browser yang terbuka.
+
+
+
+
