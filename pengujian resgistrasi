@@ -7,7 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 driver = webdriver.Chrome()  # Kamu harus download dan set up driver sesuai browser yang digunakan (misal: Chrome, Firefox)
 
 # Buka halaman registrasi
-driver.get("https://www.example.com/register")  # Ganti dengan URL registrasi sebenarnya
+driver.get("https://id.linkedin.com/")  # Ganti dengan URL registrasi sebenarnya
 
 # Langkah 1: Memastikan halaman registrasi terbuka dengan benar
 assert "Registrasi" in driver.title  # Pastikan judul halaman mengandung kata "Registrasi"
