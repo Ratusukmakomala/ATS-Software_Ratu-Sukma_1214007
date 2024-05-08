@@ -3,32 +3,39 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-# Inisialisasi WebDriver
-driver = webdriver.Chrome()  # Kamu harus download dan set up driver sesuai browser yang digunakan (misal: Chrome, Firefox)
+def main():
+    # Inisialisasi WebDriver
+    driver = webdriver.Chrome()  # Kamu harus download dan set up driver sesuai browser yang digunakan (misal: Chrome, Firefox)
 
-# Buka halaman registrasi
-driver.get("https://id.linkedin.com/")  # Ganti dengan URL registrasi sebenarnya
+    try:
+        # Buka halaman registrasi
+        driver.get("https://id.linkedin.com/")  # 
+URL registrasi 
 
-# Langkah 1: Memastikan halaman registrasi terbuka dengan benar
-assert "Registrasi" in driver.title  # Pastikan judul halaman mengandung kata "Registrasi"
+        # Langkah 1: Memastikan halaman registrasi terbuka dengan benar
+        assert "Registrasi" in driver.title  # Pastikan judul halaman mengandung kata "Registrasi"
 
-# Langkah 2: Mengisi formulir registrasi
-driver.find_element_by_id("username").send_keys("username_test")
-driver.find_element_by_id("email").send_keys("email_test@example.com")
-driver.find_element_by_id("password").send_keys("password123")
-driver.find_element_by_id("confirm_password").send_keys("password123")
-driver.find_element_by_id("submit_button").click()
+        # Langkah 2: Mengisi formulir registrasi
+        driver.find_element(By.ID, "username").send_keys("username_test")
+        driver.find_element(By.ID, "email").send_keys("email_test@example.com")
+        driver.find_element(By.ID, "password").send_keys("password123")
+        driver.find_element(By.ID, "confirm_password").send_keys("password123")
+        driver.find_element(By.ID, "submit_button").click()
 
-# Langkah 3: Memastikan registrasi berhasil
-try:
-    element = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.ID, "registration_success_message"))
-    )
-    print("Registrasi berhasil!")
-except:
-    print("Registrasi gagal atau pesan sukses tidak ditemukan")
+        # Langkah 3: Memastikan registrasi berhasil
+        success_message = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.ID, "registration_success_message"))
+        )
+        print("Registrasi berhasil!")
 
-# Langkah 4: Memeriksa email konfirmasi (contoh, bisa dilewati jika tidak relevan)
+        # Langkah 4: Memeriksa email konfirmasi (contoh, bisa dilewati jika tidak relevan)
 
-# Langkah 5: Membersihkan setelah pengujian selesai
-driver.quit()
+    except Exception as e:
+        print(f"Registrasi gagal atau terjadi kesalahan: {e}")
+
+    finally:
+        # Langkah 5: Membersihkan setelah pengujian selesai
+        driver.quit()
+
+if __name__ == "__main__":
+    main()
