@@ -1,0 +1,12 @@
+Hal yang harus dipersiapkan:
+1.	Instal Selenium WebDriver: Pastikan Anda telah menginstal Selenium WebDriver dan driver browser yang sesuai, seperti ChromeDriver untuk Chrome atau GeckoDriver untuk Firefox.
+2.	Import Library: Import library Selenium WebDriver dan library unittest untuk menulis test case.
+3.	Inisialisasi Driver: Buat instance dari kelas webdriver untuk membuka browser dan mengakses website yang ingin diuji.
+Penjelasan : 
+1.	Buka halaman registrasi dengan mengunjungi URL yang sesuai.
+2.	Verifikasi bahwa halaman yang dibuka adalah halaman registrasi dengan memeriksa apakah judul halaman mengandung kata "Registrasi".
+3.	Isi formulir registrasi dengan memasukkan informasi yang valid seperti nama pengguna, email, dan kata sandi.
+4.	Klik tombol submit untuk mengirimkan formulir.
+5.	Tunggu hingga muncul pesan sukses registrasi atau pastikan bahwa pesan sukses muncul setelah registrasi berhasil.
+6.	Jika ada, periksa email konfirmasi yang mungkin telah dikirimkan.
+7.	Tutup browser setelah pengujian selesai.
